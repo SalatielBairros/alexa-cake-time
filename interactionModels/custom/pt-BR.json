@@ -1,0 +1,177 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "cake time",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureBirthdayIntent",
+          "slots": [
+            {
+              "name": "dia",
+              "type": "AMAZON.Ordinal",
+              "samples": [
+                "{dia}"
+              ]
+            },
+            {
+              "name": "mes",
+              "type": "AMAZON.Month",
+              "samples": [
+                "{mes}"
+              ]
+            },
+            {
+              "name": "ano",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{ano}"
+              ]
+            }
+          ],
+          "samples": [
+            "Eu nasci {dia} de {mes}",
+            "{dia} {mes} {ano} ",
+            "{dia} {mes}",
+            "{dia} de {mes}",
+            "{dia} de {mes} de {ano}",
+            "Eu nasci em {dia} de {mes} de {ano}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureBirthdayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dia",
+              "type": "AMAZON.Ordinal",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.846434016520.902881211479"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.846434016520.902881211479.284961157574",
+                  "values": [
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "28",
+                    "29",
+                    "30",
+                    "31",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "20",
+                    "21"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "mes",
+              "type": "AMAZON.Month",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.846434016520.928529239181"
+              }
+            },
+            {
+              "name": "ano",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.846434016520.17688569123"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.846434016520.902881211479.284961157574",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "O dia deve estar entre um e trinta e um. Que dia você nasceu?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.846434016520.17688569123",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o ano?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.846434016520.928529239181",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Que mês você nasceu?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.846434016520.902881211479",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Que dia você nasceu?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
